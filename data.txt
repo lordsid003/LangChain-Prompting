@@ -1,0 +1,10 @@
+Temperature
+Temperature is a way to control the overall confidence of the model's scores (the logits). What this means is that, if you use a lower value than 1.0, the relative distance between the tokens will become larger (more deterministic), and if you use a larger value than 1.0, the relative distance between the tokens becomes smaller (less deterministic).
+1.0 Temperature is the original distribution that the model was trained to optimize for, since the scores remain the same.
+
+Top K
+Top K sets a hard limit on how many tokens can be selected. So top_k = 5 would mean you only allow the model to pick from the top 5 candidates and nothing else. This is considered a very "naive" and simplistic way to truncate choices.
+
+Top P
+Top P adds up the topmost tokens until hitting a target percentage. So for example, if you have 25%, 25%, 12.5%, 12.5%, and top_p = 0.50, it will only consider the top two candiates.
+In my opinion, this is too linear and doesn't work very well compared to other techniques that have succeeded it. For example, 0.24 Top P would have led to only the top token being considered there, despite the fact 25% and 25% are equally probable events.
