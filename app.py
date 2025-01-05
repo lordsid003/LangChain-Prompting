@@ -1,4 +1,4 @@
-# Model instantiate, API call, demo
+# Model instantiation and Sequential Chaining using LangChain
 
 import os
 from dotenv import load_dotenv
@@ -40,7 +40,3 @@ if __name__ == "__main__":
         check: str = input("Exit? [y/n]: ")
         if check.lower() == "y":
             break
-
-    
-
-    
